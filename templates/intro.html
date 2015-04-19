@@ -1,0 +1,71 @@
+<html>
+<head>
+  <link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/myfont1" rel="stylesheet" type="text/css"/>
+</head>
+<body bgcolor="#FDFFE3" style="overflow:hidden;overflow-y:scroll;" >
+
+<style>
+
+.Heading {
+  font-family: 'AveriaBold';
+  color: #D3741C;
+  background-color: #242729;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 40px;
+}
+.Plug{
+font-family: 'AveriaBold';
+color: #E6E3BB;
+font-size: 10px;
+text-align: center;
+background-color:#C6491A;
+}
+.SelfiImage { 
+   height: 500px;
+   background-image:url("http://ilikeitfunny.net/wp-content/uploads/2014/05/2014-despicable_me_minions_1920x1200_42747.jpg");
+   background-size: 100% auto;
+   
+}
+
+</style>
+<script>
+jQuery(document).ready(function() {
+    jQuery("input#TERMS_ACCEPTED_YN").attr("disabled", true);
+     
+    var $box = $("#scrollPane"),
+    $inner = $("> .inner", $box),
+    innerOuterHeight = $inner.outerHeight();
+    boxHeight = $box.height();
+    boxOffsetTop = $box.offset().top;
+     
+    jQuery("#scrollPane").scroll(function() {
+        if (Math.ceil(boxHeight - $inner.offset().top + boxOffsetTop) >= innerOuterHeight ) {
+        jQuery("input#TERMS_ACCEPTED_YN").removeAttr("disabled");
+    }
+ });
+});
+</script>
+
+<div class ="Heading" align="center">
+  <h1> SketchitUp </h1>
+</div>
+<div id="scrollPane" style="height:500px;">
+  <div class="SelfiImage">
+  
+  </div>
+  <div class="Plug">
+
+      
+      <h1>Plug-in !!<h1> 
+      <form action="/hello" method="POST" enctype="multipart/form-data" >
+         First name: <input type="text" name="fname"><br> 
+         Image:<input type="file" name="file" accept="image/*">
+         <input type="submit" value="upload"><br>
+      </form>
+  </div>
+
+</div>
+
+</body>
+</html>
